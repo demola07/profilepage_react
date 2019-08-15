@@ -29,7 +29,7 @@ class Main extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    Axios.post("http://localhost:6060/api/form", this.state)
+    Axios.post("https://profilepagebackend.herokuapp.com/api/form", this.state)
       .then(res => {
         if (res.status) {
           alert(`Message Sent`);
