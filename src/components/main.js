@@ -47,6 +47,28 @@ class Main extends Component {
             <div class="col-sm-5 bg-light" id={styles.left}>
               <div>
                 <img id={styles.img} src={demola} alt="demola" />
+                <section>
+                  <ul>
+                    <li>
+                      <i class="fas fa-envelope" />
+                      <span>
+                        <p>demolasobaki@gmail.com</p>
+                      </span>
+                    </li>
+                    <li>
+                      <i class="fas fa-mobile-alt" />
+                      <span>
+                        <p>08069459084</p>
+                      </span>
+                    </li>
+                    <li>
+                      <i class="fas fa-address-card" />
+                      <span>
+                        <p>Lagos, Nigeria</p>
+                      </span>
+                    </li>
+                  </ul>
+                </section>
               </div>
             </div>
 
@@ -73,16 +95,16 @@ class Main extends Component {
 
                 <div>
                   <a href="#">
-                    <img id={styles.icons} src={github} alt="github" />
+                    <i class="fab fa-github-square" id={styles.icons} />
                   </a>
                   <a href="#">
-                    <img id={styles.icons} src={twitter} alt="twitter" />
+                    <i class="fab fa-twitter-square" id={styles.icons} />
                   </a>
                   <a href="#">
-                    <img id={styles.icons} src={facebook} alt="facebook" />
+                    <i class="fab fa-facebook-square" id={styles.icons} />
                   </a>
                   <a href="#">
-                    <img id={styles.icons} src={linkedin} alt="linkedin" />
+                    <i class="fab fa-linkedin" id={styles.icons} />
                   </a>
                 </div>
               </div>
