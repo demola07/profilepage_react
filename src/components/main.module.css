@@ -22,21 +22,32 @@ body {
 #left ul li {
   margin-top: 30px;
   list-style: none;
-  color: #04020a;
+  color: #382d57;
   font-size: 20px;
-  /* opacity: 0.6; */
 }
 #left ul {
-  margin-top: 70px;
+  margin-top: 50px;
 }
 #left ul li {
-  margin-top: 12px;
+  margin-top: 9px;
 }
 #left ul li span {
   position: absolute;
   margin-left: 25px;
   margin-top: -1px;
 }
+#resume {
+  color: blue;
+}
+#resume a {
+  font-weight: 600;
+  font-size: 20px;
+  color: blue;
+}
+#resume a:hover {
+  text-decoration: none;
+}
+
 #right {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -53,7 +64,7 @@ body {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0 0 20px 0 rgba(216, 225, 233, 0.7);
+  box-shadow: 10px 10px 20px 10px rgba(216, 225, 233, 0.7);
 }
 #upper {
   font-family: Arial, Helvetica, sans-serif;
@@ -63,6 +74,9 @@ body {
 #upper h3 {
   font-weight: 900;
   font-size: 35px;
+}
+#upper p {
+  font-weight: 600;
 }
 
 #middle {

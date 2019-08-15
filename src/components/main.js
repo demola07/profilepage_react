@@ -47,7 +47,7 @@ class Main extends Component {
             <div class="col-sm-5 bg-light" id={styles.left}>
               <div>
                 <img id={styles.img} src={demola} alt="demola" />
-                <section>
+                <section class={styles.sec}>
                   <ul>
                     <li>
                       <i class="fas fa-envelope" />
@@ -67,6 +67,12 @@ class Main extends Component {
                         <p>Lagos, Nigeria</p>
                       </span>
                     </li>
+                    <li id={styles.resume}>
+                      <i class="fas fa-file" id={styles.resume} />
+                      <span>
+                        <a href="#">Resume</a>
+                      </span>
+                    </li>
                   </ul>
                 </section>
               </div>
@@ -76,7 +82,7 @@ class Main extends Component {
               <div id={styles.upper}>
                 <p>HELLO EVERYBODY, I AM</p>
                 <h3>ADEMOLA SOBAKI</h3>
-                <p>FULLSTACK WEB DEVELOPER</p>
+                <p>JUNIOR FULLSTACK WEB DEVELOPER</p>
               </div>
               <div id={styles.middle}>
                 <p>PROJECTS</p>
@@ -94,16 +100,16 @@ class Main extends Component {
                 </ul>
 
                 <div>
-                  <a href="#">
+                  <a href="https://github.com/demola07" target="_blank">
                     <i class="fab fa-github-square" id={styles.icons} />
                   </a>
-                  <a href="#">
+                  <a href="https://twitter.com/home?lang=en" target="_blank">
                     <i class="fab fa-twitter-square" id={styles.icons} />
                   </a>
-                  <a href="#">
+                  <a href="https://web.facebook.com/cooldemola" target="_blank">
                     <i class="fab fa-facebook-square" id={styles.icons} />
                   </a>
-                  <a href="#">
+                  <a href="https://www.linkedin.com/hp/" target="_blank">
                     <i class="fab fa-linkedin" id={styles.icons} />
                   </a>
                 </div>
