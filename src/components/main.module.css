@@ -67,16 +67,25 @@ body {
   box-shadow: 10px 10px 20px 10px rgba(216, 225, 233, 0.7);
 }
 #upper {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-left: 80px;
   margin-top: 50px;
 }
 #upper h3 {
+  font-family: "Heebo", sans-serif;
+  font-weight: bolder;
+  font-size: 48px;
+  color: #222222;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+#upper h3 {
   font-weight: 900;
-  font-size: 35px;
+  font-size: 45px;
 }
 #upper p {
   font-weight: 600;
+  letter-spacing: 0.7px;
 }
 
 #middle {
@@ -130,4 +139,12 @@ body {
 .form button {
   margin-top: 15px;
   margin-bottom: 10px;
+}
+#condiv {
+  height: 50px;
+  color: red;
+}
+#condiv button {
+  height: 10px;
+  color: blue;
 }

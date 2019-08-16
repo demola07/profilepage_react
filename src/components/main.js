@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import styles from "./main.module.css";
 import demola from "../images/demola.jpg";
-import github from "../images/github.png";
-import twitter from "../images/twitter.png";
-import facebook from "../images/facebook.png";
-import linkedin from "../images/linkedin.png";
+
 const Axios = require("axios");
 
 class Main extends Component {
@@ -12,30 +9,74 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      name: "",
-      email: "",
-      message: ""
+      msg: {
+        name: "",
+        email: "",
+        message: ""
+      },
+      status: {
+        success: false,
+        fail: false
+      },
+      responseMessage: ""
     };
-
     this.baseState = this.state;
+    // this.baseState1 = this.state.msg;
   }
 
   handleChange = event => {
+    let msgs = this.state.msg;
+    msgs[event.target.id] = event.target.value;
+
     this.setState({
-      [event.target.id]: event.target.value
+      msg: msgs
     });
     console.log(this.state);
+    console.log(this.state.msg);
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    Axios.post("https://profilepagebackend.herokuapp.com/api/form", this.state)
+    Axios.post("http://localhost:6060/api/form/", this.state.msg)
       .then(res => {
-        if (res.status) {
-          alert(`Message Sent`);
+        const data = res.data;
+        if (data.status) {
+          // this.setState({
+          //   msg: {
+          //     name: "",
+          //     email: "",
+          //     message: ""
+          //   }
+          // });
+          this.setState({
+            status: {
+              success: true
+            }
+          });
+          // setTimeout(() => {}, 2000);
+        } else if (!data.status) {
+          this.setState({
+            responseMessage: data.error,
+            status: {
+              fail: true
+            }
+          });
         } else {
           alert(`Error`);
         }
+        setTimeout(() => {
+          this.setState({
+            msg: {
+              name: "",
+              email: "",
+              message: ""
+            },
+            status: {
+              success: false,
+              fail: false
+            }
+          });
+        }, 2000);
       })
       .catch(error => console.log(error));
   };
@@ -120,6 +161,7 @@ class Main extends Component {
                   <label for="name">Name:</label>
                   <input
                     type="name"
+                    value={this.state.msg.name}
                     class="form-control"
                     id="name"
                     onChange={this.handleChange}
@@ -129,17 +171,29 @@ class Main extends Component {
                     type="email"
                     class="form-control"
                     id="email"
+                    value={this.state.msg.email}
                     onChange={this.handleChange}
                   />
                   <label for="message">Message:</label>
                   <textarea
                     class="form-control"
+                    value={this.state.msg.message}
                     id="message"
                     onChange={this.handleChange}
                   />
                   <button type="submit" class="btn btn-primary btn-block">
                     Submit
                   </button>
+                  {this.state.status.success && (
+                    <div class="alert alert-success">
+                      Successfully Submitted!!!
+                    </div>
+                  )}
+                  {this.state.status.fail && (
+                    <div class="alert alert-danger">
+                      Invalid Entry: {this.state.responseMessage}
+                    </div>
+                  )}
                 </form>
               </section>
             </div>
